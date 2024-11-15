@@ -44,7 +44,7 @@ ENV ORIGIN https://test-postgres.beevo.com
 # Run the application as a non-root user.
 USER node
 
-RUN npm install -g pnpm
+RUN npm install -g --unsafe-perm pnpm
 
 # Copy package.json so that package manager commands can be used.
 COPY package.json .
