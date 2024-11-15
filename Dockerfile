@@ -15,7 +15,7 @@ FROM base as deps
 # Leverage a cache mount to /root/.yarn to speed up subsequent builds.
 # Leverage bind mounts to package.json and yarn.lock to avoid having to copy them
 # into this layer.
-RUN npm install -g pnpm
+RUN npm install -g --unsafe-perm pnpm
 
 RUN --mount=type=bind,source=package.json,target=package.json \
     --mount=type=bind,source=yarn.lock,target=yarn.lock \
